@@ -575,6 +575,14 @@ int main(int argc,char* argv[])
     AsynchronousQueue *asynchQueue = nullptr;
     (void)asynchQueue;
     (void)detectorElement;
+    
+    vector<vector<uint8_t>> pattern
+    {
+        { 0, 1, 0 }, // { . , + , .}
+        { 1, 1, 1 }, // { + , + , +}
+        { 0, 1, 0 }, // { . , + , .}
+        { 1, 0, 1 }  // { + , . , +}
+    };
 
     try
     {
@@ -596,13 +604,6 @@ int main(int argc,char* argv[])
         //    *                *           *                 *           *                 *
         //    ******************           *******************           *******************
 #else //to avoid that detector bloque display we use asynchronous queue for dispatching samples
-        vector<vector<uint8_t>> pattern
-        {
-            { 0, 1, 0 }, // { . , + , .}
-            { 1, 1, 1 }, // { + , + , +}
-            { 0, 1, 0 }, // { . , + , .}
-            { 1, 0, 1 }  // { + , . , +}
-        };
         uint8_t asyncQueueMaxSize = 1;
         DetectorElement *detectorElement = new DetectorElement(pattern);
         AsynchronousQueue *asynchQueue = new AsynchronousQueue(asyncQueueMaxSize);
