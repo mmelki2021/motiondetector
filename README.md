@@ -1,10 +1,28 @@
 # Motion Detector Program
 Motion dectection implementation cmake based using c++17
+Same code sample implemented using Python 3.12
 
 ## How to build
+
+:white_check_mark:  C++ code (you need to install clang and c++ librariries)
 chmod +x build.sh
 
 ./build.sh
+
+:white_check_mark:  Python Code (to install Python 3.12 release in linux)
+cd /usr/src
+sudo curl -O https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz
+sudo tar -xf Python-3.12.0.tgz
+cd Python-3.12.0
+sudo ./configure --enable-optimizations
+sudo make -j$(nproc)
+sudo make altinstall
+
+then you can execute script
+chmod +x MotionDetector.py
+
+
+
 
 ## How to run
 executable is generated under ./build_test folder
@@ -24,7 +42,7 @@ DEFAULT : random generation of video frames, detect specific pattern in generate
 C++ Design pattern chain of responsability used to implement solution
 Status : we found one pattern in one exactly frame
 Next Step : 
-1. Find a way to generate randomly frames with insertion of mouvements inside subsequents frames
-2. find and implement an heuristic to detect motion pattern among multiple frames (display alert Popup for mouvement)
+1. Find a way to generate randomly frames with insertion of mouvements inside subsequents frames : :fire:
+2. find and implement an heuristic to detect motion pattern among multiple frames (display alert Popup for mouvement) :fire: :fire:
 
 
